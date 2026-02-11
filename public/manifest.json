@@ -1,6 +1,6 @@
 {
-  "short_name": "Hamish Williams",
-  "name": "Design Portfolio of Hamish Williams",
+  "short_name": "Nathan Knisley",
+  "name": "Portfolio of Nathan Knisley",
   "icons": [
     {
       "src": "shortcut.png",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#111111",
-  "background_color": "#111111"
+  "theme_color": "#111b14",
+  "background_color": "#111b14"
 }
