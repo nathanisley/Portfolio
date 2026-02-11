@@ -1,33 +1,31 @@
 .summary {
-  height: 100vh;
+  height: auto;
   width: 100%;
-  max-height: 1080px;
   padding-bottom: var(--spaceL);
-  margin: 120px 0;
+  margin: 100px 0;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 
   @media (--mediaDesktop) {
-    margin: var(--space2XL) 0;
+    margin: 100px 0;
   }
 
   @media (--mediaTablet) {
-    height: auto;
-    margin: var(--space3XL) 0;
+    margin: var(--spaceXL) 0;
   }
 
   @media (--mediaMobile) {
-    padding-bottom: var(--space4XL);
+    padding-bottom: var(--spaceXL);
     margin-bottom: 0;
   }
 
   &[data-first='true'] {
-    margin-top: 0;
+    margin-top: 60px;
 
     @media (--mediaTablet) {
-      margin-top: 0;
+      margin-top: 40px;
     }
   }
 }
@@ -85,107 +83,77 @@
   width: 100%;
 }
 
-.model {
-  --width: 180%;
-  --aspectRatio: 12 / 10;
-
-  min-width: var(--width);
-  aspect-ratio: var(--aspectRatio);
-  display: grid;
+.imageFrame {
   position: relative;
-
-  &[data-device='laptop'] {
-    top: 6%;
-    left: 14%;
-
-    @media (--mediaDesktop) {
-      --width: 180%;
-    }
-
-    @media (--mediaTablet) {
-      --width: 140%;
-
-      top: 10%;
-      left: 0;
-    }
-  }
-
-  &[data-device='phone'] {
-    --width: 116%;
-    --aspectRatio: 7 / 10;
-
-    top: 5%;
-    left: -10%;
-
-    @media (--mediaDesktop) {
-      --width: 108%;
-
-      left: 0;
-    }
-
-    @media (--mediaTablet) {
-      --width: 108%;
-
-      left: 0;
-      max-height: 60vh;
-    }
-
-    @media (--mediaMobile) {
-      --width: 108%;
-
-      left: 0;
-      max-height: none;
-    }
-  }
-}
-
-.loader {
+  width: 100%;
+  max-width: 640px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--black);
+  box-shadow: 0 0 60px color-mix(in lab, var(--background) 40%, transparent);
   opacity: 0;
-  transition: opacity 400ms ease 1000ms;
+  transition: opacity var(--durationXL) var(--bezierFastoutSlowin) 0.4s;
+
+  @media (--mediaUseMotion) {
+    transition: opacity var(--durationXL) var(--bezierFastoutSlowin) 0.4s,
+      transform var(--durationXL) var(--bezierFastoutSlowin) 0.4s;
+    transform: translate3d(0, var(--spaceL), 0);
+  }
 
   &[data-visible='true'] {
     opacity: 1;
+    transform: none;
+  }
+
+  @media (--mediaTablet) {
+    max-width: 480px;
+  }
+
+  @media (--mediaMobile) {
+    max-width: 100%;
+    border-radius: 12px;
   }
 }
 
-.svg {
+.image {
+  width: 100%;
+  display: block;
+
+  & img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transform: scale(var(--imageScale, 1.1)) translateY(var(--imageOffsetY, 0%));
+  }
+}
+
+.decorativeText {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+  z-index: var(--zIndex3);
   opacity: 0;
-  transition: opacity 1200ms ease 1400ms;
-  fill: var(--textTitle);
+  transition: opacity var(--durationM) ease var(--durationL);
+  color: var(--textTitle);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 18px;
+  font-weight: var(--fontWeightMedium);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  white-space: nowrap;
+  pointer-events: none;
 
   &[data-visible='true'] {
-    opacity: var(--opacity);
+    opacity: 0.15;
   }
 
-  &[data-device='laptop'] {
-    position: absolute;
-    width: 100%;
-    right: -36%;
-    bottom: 24%;
-    transform: translateY(50%);
-
-    @media (--mediaTablet) {
-      width: 80%;
-      right: -10%;
-      bottom: 18%;
-    }
-
-    @media (--mediaMobile) {
-      right: 0;
-    }
-  }
-
-  &[data-device='phone'] {
-    position: absolute;
-    bottom: 23%;
-    transform: translateY(50%);
-    width: 100%;
-    transition-delay: 800ms;
-
-    @media (--mediaTablet) {
-      width: 80%;
-      bottom: 23%;
-    }
+  @media (--mediaTablet) {
+    font-size: 14px;
   }
 }
 

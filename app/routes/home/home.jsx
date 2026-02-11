@@ -1,9 +1,6 @@
-import gamestackTexture2Large from '~/assets/gamestack-list-large.jpg';
-import gamestackTexture2Placeholder from '~/assets/gamestack-list-placeholder.jpg';
-import gamestackTexture2 from '~/assets/gamestack-list.jpg';
-import gamestackTextureLarge from '~/assets/gamestack-login-large.jpg';
-import gamestackTexturePlaceholder from '~/assets/gamestack-login-placeholder.jpg';
-import gamestackTexture from '~/assets/gamestack-login.jpg';
+import localTextureLarge from '~/assets/local-large.jpg';
+import localTexturePlaceholder from '~/assets/local-placeholder.jpg';
+import localTexture from '~/assets/local.jpg';
 import sliceTextureLarge from '~/assets/slice-app-large.jpg';
 import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
 import sliceTexture from '~/assets/slice-app.jpg';
@@ -41,8 +38,8 @@ export const links = () => {
 
 export const meta = () => {
   return baseMeta({
-    title: 'Designer + Developer',
-    description: `Design portfolio of ${config.name} — a product designer working on web & mobile apps with a focus on motion, experience design, and accessibility.`,
+    title: 'Leader + Builder',
+    description: `Portfolio of ${config.name} — product leader, agile coach, and builder. Former Chief of Staff. Scaled teams from 20 to 80+. Trained thousands across four countries.`,
   });
 };
 
@@ -103,13 +100,15 @@ export const Home = () => {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="Designing the future of education"
-        description="Designing a platform to help educators build better online courseware"
-        buttonText="View project"
-        buttonLink="/projects/smart-sparrow"
+        title="AI-Powered Product Development"
+        description="Designed and shipped this site using Claude Code as my engineering co-pilot. Remix, Three.js, custom GLSL shaders, and Cloudflare deployment — product thinking meets AI-powered development."
+        buttonText="View source"
+        buttonLink="https://github.com/nathanisley/portfolio"
+        decorativeLabel="Shipped"
         model={{
-          type: 'laptop',
-          alt: 'Smart Sparrow lesson builder',
+          alt: 'This portfolio website running in a browser',
+          imageScale: 1.1,
+          imageOffsetY: '4%',
           textures: [
             {
               srcSet: `${sprTexture} 1280w, ${sprTextureLarge} 2560w`,
@@ -124,21 +123,18 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Video game progress tracking"
-        description="Design and development for a video game tracking app built in React Native"
-        buttonText="View website"
-        buttonLink="https://gamestack.hamishw.com"
+        title="Local by Flywheel — Product Leadership"
+        description="Led the delivery team for Flywheel's second-ever product offering. Drove the customer-led 'Local Pro' roadmap with user research, go-to-market strategy, and cross-functional collaboration across engineering, design, and marketing."
+        buttonText="View case study"
+        buttonLink="/projects/gamestack"
+        decorativeLabel="Led"
         model={{
-          type: 'phone',
-          alt: 'App login screen',
+          alt: 'Local by Flywheel WordPress development application',
+          imageScale: 1.02,
           textures: [
             {
-              srcSet: `${gamestackTexture} 375w, ${gamestackTextureLarge} 750w`,
-              placeholder: gamestackTexturePlaceholder,
-            },
-            {
-              srcSet: `${gamestackTexture2} 375w, ${gamestackTexture2Large} 750w`,
-              placeholder: gamestackTexture2Placeholder,
+              srcSet: `${localTexture} 1280w, ${localTextureLarge} 2560w`,
+              placeholder: localTexturePlaceholder,
             },
           ],
         }}
@@ -148,13 +144,13 @@ export const Home = () => {
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Biomedical image collaboration"
-        description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
-        buttonText="View project"
+        title="Scaling Agile — 20 to 80+ Engineers"
+        description="As Agile Coach at Flywheel/WP Engine, I scaled the Scrum organization fourfold. Certified by Jeff Sutherland and Mike Cohn, I trained thousands of clients across four countries on Agile, Scrum, Kanban, and release planning."
+        buttonText="View case study"
         buttonLink="/projects/slice"
+        decorativeLabel="Scaled"
         model={{
-          type: 'laptop',
-          alt: 'Annotating a biomedical image in the Slice app',
+          alt: 'Agile coaching workshop with sprint boards and burn down charts',
           textures: [
             {
               srcSet: `${sliceTexture} 800w, ${sliceTextureLarge} 1920w`,

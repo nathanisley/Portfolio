@@ -1,11 +1,12 @@
 {
-  "name": "Hamish Williams",
-  "role": "Designer",
-  "disciplines": ["Developer", "Prototyper", "Animator", "Illustrator", "Modder"],
-  "url": "https://hamishw.com",
-  "bluesky": "hamishw.com",
-  "figma": "@Hamish",
-  "github": "HamishMW",
-  "repo": "https://github.com/HamishMW/portfolio",
-  "ascii": "__  __  __\n\u005C \u005C \u005C \u005C \u005C\u2215\n \u005C \u005C\u2215\u005C \u005C\n  \u005C\u2215  \u005C\u2215\n"
+  "name": "Nathan Knisley",
+  "role": "Leader",
+  "disciplines": ["Product Leader", "Agile Coach", "Chief of Staff", "Engineer"],
+  "url": "https://nathanknisley.com",
+  "linkedin": "https://www.linkedin.com/in/nathanknisley/",
+  "github": "https://github.com/nathanisley/",
+  "discogs": "https://www.discogs.com/artist/1196680-Nathan-Knisley",
+  "bandcamp": "https://bullroar.bandcamp.com/album/bullroar",
+  "repo": "https://github.com/nathanisley/portfolio",
+  "ascii": "__  __  __\n\\ \\ \\ \\ \\⁄\n \\ \\⁄\\ \\\n  \\⁄  \\⁄\n"
 }

@@ -1,5 +1,9 @@
+import heroPortraitLarge from '~/assets/hero-portrait-large.jpg';
+import heroPortraitPlaceholder from '~/assets/hero-portrait-placeholder.jpg';
+import heroPortrait from '~/assets/hero-portrait.jpg';
 import { DecoderText } from '~/components/decoder-text';
 import { Heading } from '~/components/heading';
+import { Image } from '~/components/image';
 import { Section } from '~/components/section';
 import { useTheme } from '~/components/theme-provider';
 import { tokens } from '~/components/theme-provider/theme';
@@ -68,6 +72,17 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
                 <DisplacementSphere />
               </Suspense>
             )}
+            <div className={styles.heroPortrait} data-visible={visible}>
+              <Image
+                className={styles.heroPortraitImage}
+                placeholder={heroPortraitPlaceholder}
+                srcSet={`${heroPortrait} 400w, ${heroPortraitLarge} 800w`}
+                width={400}
+                height={400}
+                sizes="(max-width: 768px) 120px, 280px"
+                alt="Nathan Knisley"
+              />
+            </div>
             <header className={styles.text}>
               <h1 className={styles.name} data-visible={visible} id={titleId}>
                 <DecoderText text={config.name} delay={500} />

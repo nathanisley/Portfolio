@@ -41,9 +41,15 @@ void main() {
 
 	#include <clipping_planes_fragment>
 
-  vec3 color = vec3(vUv * (0.2 - 2.0 * noise), 1.0);
-  vec3 finalColors = vec3(color.b * 1.5, color.r, color.r);
-  vec4 diffuseColor = vec4(cos(finalColors * noise * 3.0), 1.0);
+  // Forest green color-shifting: deep green, emerald, gold accent
+  float t = time * 0.4;
+  vec3 deepGreen = vec3(0.12, 0.45, 0.22);
+  vec3 emerald = vec3(0.2, 0.75, 0.45);
+  vec3 gold = vec3(0.85, 0.72, 0.25);
+  vec3 colorA = mix(deepGreen, emerald, sin(t + vUv.x * 2.5) * 0.5 + 0.5);
+  vec3 colorB = mix(emerald, gold, cos(t * 0.6 + vUv.y * 2.0) * 0.5 + 0.5);
+  vec3 finalColors = mix(colorA, colorB, noise * 0.6 + 0.3);
+  vec4 diffuseColor = vec4(finalColors * (1.1 - noise * 0.2), 1.0);
   ReflectedLight reflectedLight = ReflectedLight(vec3(0.0), vec3(0.0), vec3(0.0), vec3(0.0));
   vec3 totalEmissiveRadiance = emissive;
 

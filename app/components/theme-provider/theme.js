@@ -107,12 +107,13 @@ const tokensMobileSmall = {
 };
 
 // Tokens that change based on theme
+// Forest green brand palette
 const dark = {
-  background: 'oklch(17.76% 0 0)',
-  backgroundLight: 'oklch(21.78% 0 0)',
-  primary: 'oklch(84.42% 0.19 202.24)',
-  accent: 'oklch(84.42% 0.19 202.24)',
-  error: 'oklch(65.91% 0.249 13.76)',
+  background: '#111b14',
+  backgroundLight: '#1a2b1e',
+  primary: '#5dba72',
+  accent: '#8fd4a0',
+  error: '#ff6b6b',
   text: 'var(--white)',
   textTitle: 'var(--text)',
   textBody: 'color-mix(in lab, var(--text) 80%, transparent)',
@@ -120,11 +121,11 @@ const dark = {
 };
 
 const light = {
-  background: 'oklch(96.12% 0 0)',
-  backgroundLight: 'var(--white)',
-  primary: 'var(--black)',
-  accent: 'oklch(84.42% 0.19 202.24)',
-  error: 'oklch(63.17% 0.259 25.41)',
+  background: '#f4f8f5',
+  backgroundLight: '#ffffff',
+  primary: '#2d7a3f',
+  accent: '#1a5c2a',
+  error: '#d44040',
   text: 'var(--black)',
   textTitle: 'color-mix(in lab, var(--text) 90%, transparent)',
   textBody: 'color-mix(in lab, var(--text) 75%, transparent)',
