@@ -96,7 +96,7 @@ export const Home = () => {
         buttonLink="/projects/ai-development"
         decorativeLabel="Shipped"
         model={{
-          alt: 'Four AI-built apps: portfolio site, StarkWeather, Grabbl, and WeatherMat',
+          alt: 'Four AI-built apps: portfolio site, StarkWeather, Grabbl, and SleepMat',
           imageScale: 1,
           imageOffsetY: '0%',
           textures: [

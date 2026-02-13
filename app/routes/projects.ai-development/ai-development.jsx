@@ -7,9 +7,9 @@ import portfolioSite from '~/assets/portfolio-site.png';
 import starkweatherLarge from '~/assets/starkweather-large.png';
 import starkweatherPlaceholder from '~/assets/starkweather-placeholder.png';
 import starkweather from '~/assets/starkweather.png';
-import weathermatLarge from '~/assets/weathermat-large.png';
-import weathermatPlaceholder from '~/assets/weathermat-placeholder.png';
-import weathermat from '~/assets/weathermat.png';
+import sleepmatLarge from '~/assets/sleepmat-large.png';
+import sleepmatPlaceholder from '~/assets/sleepmat-placeholder.png';
+import sleepmat from '~/assets/sleepmat.png';
 import { Footer } from '~/components/footer';
 import {
   ProjectContainer,
@@ -132,9 +132,9 @@ export const AiDevelopment = () => {
             <div className={styles.columns} data-alternate="true">
               <div className={styles.textColumn}>
                 <ProjectTextRow noMargin>
-                  <ProjectSectionHeading>WeatherMat</ProjectSectionHeading>
+                  <ProjectSectionHeading>SleepMat</ProjectSectionHeading>
                   <ProjectSectionText>
-                    A resource platform for people experiencing homelessness. WeatherMat
+                    A resource platform for people experiencing homelessness. SleepMat
                     connects users to food assistance, healthcare, housing help, and ID
                     services — all accessible offline and without an account. Built with
                     a map, parking resources, and a benefits navigator designed to work
@@ -144,11 +144,11 @@ export const AiDevelopment = () => {
               </div>
               <div className={styles.imageWrap}>
                 <Image
-                  srcSet={`${weathermat} 640w, ${weathermatLarge} 1320w`}
+                  srcSet={`${sleepmat} 640w, ${sleepmatLarge} 1320w`}
                   width={640}
                   height={1390}
-                  placeholder={weathermatPlaceholder}
-                  alt="WeatherMat benefits navigator showing food assistance, healthcare, ID, and housing help resources"
+                  placeholder={sleepmatPlaceholder}
+                  alt="SleepMat benefits navigator showing food assistance, healthcare, ID, and housing help resources"
                   sizes={`(max-width: ${media.mobile}px) 100vw, 50vw`}
                 />
               </div>
