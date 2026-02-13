@@ -1,16 +1,16 @@
 .intro {
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   position: relative;
-  padding-bottom: 10vh;
-  margin-bottom: -20vh;
+  padding-bottom: 10dvh;
+  margin-bottom: -20dvh;
 
   @media (--mediaMobile) {
-    padding-bottom: 16vh;
-    margin-bottom: -16vh;
+    padding-bottom: 16dvh;
+    margin-bottom: -16dvh;
   }
 }
 
