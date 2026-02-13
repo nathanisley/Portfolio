@@ -25,22 +25,15 @@
 }
 
 .content {
-  --textColumnWidth: 36%;
-
   width: 100%;
-  max-width: var(--maxWidthL);
   align-items: start;
   justify-content: center;
   display: grid;
-  grid-template-columns: var(--textColumnWidth) 1fr;
+  grid-template-columns: minmax(200px, 480px) minmax(200px, 1fr);
   grid-column-gap: var(--space2XL);
 
-  @media (--mediaLaptop) {
-    --textColumnWidth: 40%;
-  }
-
   @media (--mediaTablet) {
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -87,7 +80,6 @@
 }
 
 .title {
-  white-space: nowrap;
   margin-bottom: var(--spaceL);
   transition-property: opacity;
   transition-timing-function: var(--bezierFastoutSlowin);
@@ -146,6 +138,42 @@
   &[data-visible='true'] {
     transform: none;
     opacity: 1;
+  }
+}
+
+@keyframes sayHelloPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 color-mix(in lab, var(--primary) 40%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 10px color-mix(in lab, var(--primary) 0%, transparent);
+  }
+}
+
+.sayHello {
+  --buttonSize: calc((80 / 16) * 1rem);
+  --buttonFontSize: calc((28 / 16) * 1rem);
+
+  opacity: 0;
+  transition-property: opacity;
+  transition-timing-function: var(--bezierFastoutSlowin);
+  transition-duration: var(--durationXL);
+  transition-delay: var(--durationXL);
+
+  @media (--mediaUseMotion) {
+    transition-property: transform, opacity;
+    transform: translate3d(0, var(--spaceL), 0);
+  }
+
+  &[data-visible='true'] {
+    transform: none;
+    opacity: 1;
+    animation: sayHelloPulse 2s ease-in-out infinite;
+  }
+
+  @media (--mediaMobile) {
+    --buttonSize: calc((64 / 16) * 1rem);
+    --buttonFontSize: calc((22 / 16) * 1rem);
   }
 }
 

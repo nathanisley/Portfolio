@@ -8,6 +8,7 @@
     right: var(--inset);
     z-index: var(--zIndex4);
     display: none;
+    filter: drop-shadow(0 0 10px var(--background)) drop-shadow(0 0 20px var(--background));
 
     @media (--mediaMobile), (--mediaMobileLS) {
       display: flex;

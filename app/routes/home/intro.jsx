@@ -11,8 +11,8 @@ import { Transition } from '~/components/transition';
 import { VisuallyHidden } from '~/components/visually-hidden';
 import { Link as RouterLink } from '@remix-run/react';
 import { useInterval, usePrevious, useScrollToHash } from '~/hooks';
-import { Suspense, lazy, useEffect, useState } from 'react';
-import { cssProps } from '~/utils/style';
+import { Suspense, lazy, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { cssProps, msToNum, numToMs } from '~/utils/style';
 import config from '~/config.json';
 import { useHydrated } from '~/hooks/useHydrated';
 import styles from './intro.module.css';
@@ -20,6 +20,58 @@ import styles from './intro.module.css';
 const DisplacementSphere = lazy(() =>
   import('./displacement-sphere').then(module => ({ default: module.DisplacementSphere }))
 );
+
+// Renders discipline words with line-aware animation delays.
+// Words on the same visual line animate together; new lines get staggered.
+function DisciplineWords({ item, status, nodeRef }) {
+  const groupRef = useRef(null);
+
+  useLayoutEffect(() => {
+    if (status !== 'entering' || !groupRef.current) return;
+
+    const words = Array.from(groupRef.current.children);
+    let prevTop = null;
+    let lineIndex = 0;
+
+    words.forEach(word => {
+      const rect = word.getBoundingClientRect();
+      if (prevTop !== null && Math.abs(rect.top - prevTop) > 2) {
+        lineIndex++;
+      }
+      prevTop = rect.top;
+      word.style.setProperty(
+        '--delay',
+        numToMs(msToNum(tokens.base.durationL) + lineIndex * 200)
+      );
+    });
+  }, [status]);
+
+  return (
+    <span
+      aria-hidden
+      ref={el => {
+        groupRef.current = el;
+        nodeRef.current = el;
+      }}
+      className={styles.disciplineGroup}
+      data-status={status}
+    >
+      {item.split(' ').map((word, wordIndex) => (
+        <span
+          key={wordIndex}
+          className={styles.word}
+          data-plus={wordIndex === 0}
+          data-status={status}
+          style={cssProps({
+            delay: numToMs(msToNum(tokens.base.durationL) + wordIndex * 200),
+          })}
+        >
+          {word}
+        </span>
+      ))}
+    </span>
+  );
+}
 
 export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
   const { theme } = useTheme();
@@ -101,7 +153,7 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
                   </span>
                   <span className={styles.line} data-status={status} />
                 </span>
-                <div className={styles.row}>
+                <div className={`${styles.row} ${styles.disciplines}`}>
                   {disciplines.map(item => (
                     <Transition
                       unmount
@@ -110,16 +162,11 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
                       key={item}
                     >
                       {({ status, nodeRef }) => (
-                        <span
-                          aria-hidden
-                          ref={nodeRef}
-                          className={styles.word}
-                          data-plus={true}
-                          data-status={status}
-                          style={cssProps({ delay: tokens.base.durationL })}
-                        >
-                          {item}
-                        </span>
+                        <DisciplineWords
+                          item={item}
+                          status={status}
+                          nodeRef={nodeRef}
+                        />
                       )}
                     </Transition>
                   ))}

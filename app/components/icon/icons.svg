@@ -48,5 +48,8 @@
     <symbol id="bandcamp" width="24" height="24" viewBox="0 0 24 24">
       <path d="M22 2H2v20h20V2ZM9.71 16H5l4.29-8H19l-4.29 8h-5Z"/>
     </symbol>
+    <symbol id="calendar" width="24" height="24" viewBox="0 0 24 24">
+      <path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 16H5V10h14v10ZM5 8V6h14v2H5Zm2 4h5v5H7v-5Z"/>
+    </symbol>
   </defs>
 </svg>

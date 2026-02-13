@@ -12,6 +12,7 @@ import { Text } from '~/components/text';
 import { Transition } from '~/components/transition';
 import { Fragment, useState } from 'react';
 import { media } from '~/utils/style';
+import config from '~/config.json';
 import styles from './profile.module.css';
 
 const ProfileText = ({ visible, titleId }) => (
@@ -30,7 +31,7 @@ const ProfileText = ({ visible, titleId }) => (
       prototype with AI, and bridge the gap between strategy and execution. Certified by
       Jeff Sutherland and Mike Cohn, I've trained thousands of clients across four
       countries. Feel free to{' '}
-      <Link href="/contact">reach out</Link>.
+      <Link href={`mailto:${config.email}`}>say hello</Link>.
     </Text>
   </Fragment>
 );
@@ -68,13 +69,20 @@ export const Profile = ({ id, visible, sectionRef }) => {
               <ProfileText visible={visible} titleId={titleId} />
               <div className={styles.actions}>
                 <Button
-                  secondary
-                  className={styles.button}
+                  className={styles.sayHello}
                   data-visible={visible}
-                  href="/contact"
+                  href={`mailto:${config.email}`}
                   icon="send"
                 >
-                  Send me a message
+                  Say Hello
+                </Button>
+                <Button
+                  className={styles.sayHello}
+                  data-visible={visible}
+                  href="https://calendly.com/nathankbuilds"
+                  icon="calendar"
+                >
+                  Let&apos;s Meet
                 </Button>
                 <Button
                   secondary

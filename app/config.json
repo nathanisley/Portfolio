@@ -1,12 +1,13 @@
 {
   "name": "Nathan Knisley",
-  "role": "Leader",
-  "disciplines": ["Product Leader", "Agile Coach", "Chief of Staff", "Engineer"],
+  "role": "Product Leader",
+  "disciplines": ["Agile Coach", "Chief of Staff", "Builder", "Audio Engineer", "Bikepacker", "Dad"],
   "url": "https://nathank.build",
   "linkedin": "https://www.linkedin.com/in/nathanknisley/",
   "github": "https://github.com/nathanisley/",
   "discogs": "https://www.discogs.com/artist/1196680-Nathan-Knisley",
   "bandcamp": "https://bullroar.bandcamp.com/album/bullroar",
+  "email": "nathankbuilds@gmail.com",
   "repo": "https://github.com/nathanisley/portfolio",
   "ascii": "__  __  __\n\\ \\ \\ \\ \\⁄\n \\ \\⁄\\ \\\n  \\⁄  \\⁄\n"
 }

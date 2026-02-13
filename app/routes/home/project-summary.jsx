@@ -75,10 +75,13 @@ export function ProjectSummary({
           style={{
             '--imageScale': model.imageScale || 1.1,
             '--imageOffsetY': model.imageOffsetY || '0%',
+            ...(model.videoCrop && { '--videoCrop': model.videoCrop }),
+            ...(model.videoCropY && { '--videoCropY': model.videoCropY }),
           }}
         >
           <Image
             className={styles.image}
+            src={model.textures[0].src}
             srcSet={model.textures[0].srcSet}
             placeholder={model.textures[0].placeholder}
             alt={model.alt}

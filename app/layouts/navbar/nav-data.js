@@ -10,12 +10,12 @@ export const navLinks = [
     pathname: '/#details',
   },
   {
-    label: 'Articles',
-    pathname: '/articles',
+    label: 'Giving Back',
+    pathname: '/giving-back',
   },
   {
-    label: 'Contact',
-    pathname: '/contact',
+    label: 'Say Hello',
+    pathname: '/#details',
   },
 ];
 

@@ -31,31 +31,23 @@
 }
 
 .content {
-  --textColumnWidth: 36%;
-
   width: 100%;
-  max-width: var(--maxWidthL);
   align-items: center;
   justify-content: center;
   display: grid;
-  grid-template-columns: var(--textColumnWidth) 1fr;
+  grid-template-columns: minmax(200px, 480px) minmax(200px, 1fr);
   grid-column-gap: var(--space2XL);
 
   .summary[data-alternate='true'] & {
-    grid-template-columns: 1fr var(--textColumnWidth);
-  }
-
-  @media (--mediaLaptop) {
-    --textColumnWidth: 40%;
+    grid-template-columns: minmax(200px, 1fr) minmax(200px, 400px);
   }
 
   @media (--mediaTablet) {
     .summary[data-alternate='true'] & {
-      grid-template-columns: 100%;
+      grid-template-columns: 1fr;
     }
 
-    grid-template-columns: 100%;
-    flex-direction: column-reverse;
+    grid-template-columns: 1fr;
     height: auto;
   }
 }
@@ -63,6 +55,7 @@
 .details {
   z-index: var(--zIndex1);
   position: relative;
+  min-width: 0;
 
   @media (--mediaTablet) {
     flex: 0 0 auto;
@@ -77,7 +70,6 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-self: center;
   justify-content: center;
   height: 100%;
   width: 100%;
@@ -86,7 +78,6 @@
 .imageFrame {
   position: relative;
   width: 100%;
-  max-width: 640px;
   border-radius: 16px;
   overflow: hidden;
   border: 2px solid var(--black);
@@ -105,12 +96,7 @@
     transform: none;
   }
 
-  @media (--mediaTablet) {
-    max-width: 480px;
-  }
-
   @media (--mediaMobile) {
-    max-width: 100%;
     border-radius: 12px;
   }
 }
@@ -124,6 +110,15 @@
     height: auto;
     display: block;
     transform: scale(var(--imageScale, 1.1)) translateY(var(--imageOffsetY, 0%));
+  }
+
+  & video {
+    width: 100%;
+    display: block;
+    transform: scale(var(--imageScale, 1.1)) translateY(var(--imageOffsetY, 0%));
+    aspect-ratio: var(--videoCrop);
+    object-fit: cover;
+    object-position: 50% var(--videoCropY, 50%);
   }
 }
 
@@ -189,6 +184,7 @@
 
 .title {
   margin-bottom: var(--spaceL);
+  overflow-wrap: break-word;
   transition-property: opacity;
   transition-timing-function: var(--bezierFastoutSlowin);
   transition-duration: var(--durationXL);
