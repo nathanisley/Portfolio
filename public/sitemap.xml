@@ -4,11 +4,23 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://nathank.build/contact/</loc>
+    <loc>https://nathank.build/projects/ai-development</loc>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://nathank.build/articles/</loc>
+    <loc>https://nathank.build/projects/petfriendly</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://nathank.build/projects/gamestack</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://nathank.build/projects/slice</loc>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://nathank.build/giving-back</loc>
     <changefreq>monthly</changefreq>
   </url>
 </urlset>
