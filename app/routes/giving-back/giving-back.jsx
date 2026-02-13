@@ -244,7 +244,7 @@ export const GivingBack = () => {
                       Food Bank for the Heartland
                     </Link>, and other local nonprofits. Also gathered
                     and organized our chapter&apos;s team for the{' '}
-                    <Link href="https://corporatecup.lung.org/pages/1196?eventID=552">
+                    <Link href="https://omahacorporatecup.donordrive.com">
                       American Lung Association Corporate Cup
                     </Link>, raising money for lung disease research.
                   </ProjectSectionText>

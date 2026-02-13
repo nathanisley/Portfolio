@@ -1,9 +1,9 @@
 import localTextureLarge from '~/assets/local-large.jpg';
 import localTexturePlaceholder from '~/assets/local-placeholder.jpg';
 import localTexture from '~/assets/local.jpg';
-import sliceTextureLarge from '~/assets/slice-app-large.jpg';
-import sliceTexturePlaceholder from '~/assets/slice-app-placeholder.jpg';
-import sliceTexture from '~/assets/slice-app.jpg';
+import agileScalingLarge from '~/assets/agile-scaling-large.jpg';
+import agileScalingPlaceholder from '~/assets/agile-scaling-placeholder.jpg';
+import agileScaling from '~/assets/agile-scaling.jpg';
 import aiDevLarge from '~/assets/ai-dev-large.jpg';
 import aiDevPlaceholder from '~/assets/ai-dev-placeholder.jpg';
 import aiDev from '~/assets/ai-dev.jpg';
@@ -160,11 +160,11 @@ export const Home = () => {
         buttonLink="/projects/slice"
         decorativeLabel="Scaled"
         model={{
-          alt: 'Agile coaching workshop with sprint boards and burn down charts',
+          alt: 'Agile scaling team collaboration and sprint planning',
           textures: [
             {
-              srcSet: `${sliceTexture} 800w, ${sliceTextureLarge} 1920w`,
-              placeholder: sliceTexturePlaceholder,
+              srcSet: `${agileScaling} 1280w, ${agileScalingLarge} 3916w`,
+              placeholder: agileScalingPlaceholder,
             },
           ],
         }}
