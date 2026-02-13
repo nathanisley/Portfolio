@@ -12,9 +12,9 @@ import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.
 import sprTexture from '~/assets/spr-lesson-builder-dark.jpg';
 import petFriendlyVideo from '~/assets/petfriendly.mp4';
 import petFriendlyPlaceholder from '~/assets/petfriendly-placeholder.jpg';
-import communityBikeLarge from '~/assets/community-bike-large.jpg';
-import communityBikePlaceholder from '~/assets/community-bike-placeholder.jpg';
-import communityBike from '~/assets/community-bike.jpg';
+import givingBackLarge from '~/assets/giving-back-large.jpg';
+import givingBackPlaceholder from '~/assets/giving-back-placeholder.jpg';
+import givingBack from '~/assets/giving-back.jpg';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
@@ -91,7 +91,7 @@ export const Home = () => {
         visible={visibleSections.includes(projectOne.current)}
         index={1}
         title="AI-Powered Product Development"
-        description="Proof that product sense + AI ships real software. This portfolio, a beloved weather app, a gravel road discovery tool, and a resource app for the unhoused — all designed and launched with AI as my engineering partner."
+        description="Proof that product sense + AI ships real software. nathank.build, a beloved weather app, a gravel road discovery tool, and a resource app for the unhoused. All designed and launched with AI as my engineering partner."
         buttonText="How I built it"
         buttonLink="/projects/ai-development"
         decorativeLabel="Shipped"
@@ -182,16 +182,16 @@ export const Home = () => {
         visible={visibleSections.includes(projectFive.current)}
         index={5}
         title="Giving Back"
-        description="None of it means much without giving back. Board leadership, mentoring a kid for nine years, food drives, shelter volunteering — showing up for people facing things most of us never have to think about."
+        description="None of it means much without giving back. Board leadership, mentoring a kid for nine years, food drives, shelter volunteering. Showing up for people facing things most of us never have to think about."
         buttonText="See the work"
         buttonLink="/giving-back"
         decorativeLabel="Gave"
         model={{
-          alt: 'Community Bike Project volunteers working together',
+          alt: 'Giving back to the community',
           textures: [
             {
-              srcSet: `${communityBike} 640w, ${communityBikeLarge} 2100w`,
-              placeholder: communityBikePlaceholder,
+              srcSet: `${givingBack} 1280w, ${givingBackLarge} 5760w`,
+              placeholder: givingBackPlaceholder,
             },
           ],
         }}

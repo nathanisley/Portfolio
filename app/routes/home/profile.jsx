@@ -21,13 +21,13 @@ const ProfileText = ({ visible, titleId }) => (
       <DecoderText text="Hi there" start={visible} delay={500} />
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I'm Nathan — a product leader, agile coach, and builder who started in IT and
+      I'm Nathan, a product leader, agile coach, and builder who started in IT and
       networking. I've served as Chief of Staff at a startup (recruited by the CEO to
       basically run the company), scaled an agile org from 20 to 80+ at Flywheel/WP Engine,
       and delivered the first Big Data platform at a Fortune 500.
     </Text>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-      I believe the best leaders build. I don't just write requirements — I ship code,
+      I believe the best leaders build. I don't just write requirements. I ship code,
       prototype with AI, and bridge the gap between strategy and execution. Certified by
       Jeff Sutherland and Mike Cohn, I've trained thousands of clients across four
       countries. Feel free to{' '}

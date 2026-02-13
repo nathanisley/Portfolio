@@ -39,6 +39,8 @@
 
 .imageWrap {
   width: 100%;
+  max-width: 320px;
+  justify-self: center;
   border-radius: 16px;
   overflow: hidden;
   border: 2px solid var(--black);
@@ -49,4 +51,9 @@
   @media (--mediaMobile) {
     border-radius: 12px;
   }
+}
+
+.imageWrapLandscape {
+  composes: imageWrap;
+  max-width: 100%;
 }

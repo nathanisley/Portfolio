@@ -1,6 +1,9 @@
 import grabblLarge from '~/assets/grabbl-large.png';
 import grabblPlaceholder from '~/assets/grabbl-placeholder.png';
 import grabbl from '~/assets/grabbl.png';
+import portfolioSiteLarge from '~/assets/portfolio-site-large.png';
+import portfolioSitePlaceholder from '~/assets/portfolio-site-placeholder.png';
+import portfolioSite from '~/assets/portfolio-site.png';
 import starkweatherLarge from '~/assets/starkweather-large.png';
 import starkweatherPlaceholder from '~/assets/starkweather-placeholder.png';
 import starkweather from '~/assets/starkweather.png';
@@ -25,7 +28,7 @@ import styles from './ai-development.module.css';
 
 const title = 'AI-Powered Product Development';
 const description =
-  'Four products designed and shipped with AI as my engineering partner — from concept to launch, each one solving a real problem for real people.';
+  'Four products designed and shipped with AI as my engineering partner. From concept to launch, each one solving a real problem for real people.';
 const roles = ['Product', 'AI Development', 'Design', 'Builder'];
 
 export const meta = () => {
@@ -44,6 +47,34 @@ export const AiDevelopment = () => {
         <ProjectSection padding="top" className={styles.compactSection}>
           <ProjectSectionContent>
             <div className={styles.columns}>
+              <div className={styles.textColumn}>
+                <ProjectTextRow noMargin>
+                  <ProjectSectionHeading>nathank.build</ProjectSectionHeading>
+                  <ProjectSectionText>
+                    The site you&apos;re on right now. Built with Remix, Three.js, custom
+                    GLSL shaders, and deployed to Cloudflare, all using Claude Code as
+                    my engineering co-pilot. Product thinking applied to personal branding:
+                    responsive design, animated transitions, dark/light themes, and
+                    performance-first architecture.
+                  </ProjectSectionText>
+                </ProjectTextRow>
+              </div>
+              <div className={styles.imageWrapLandscape}>
+                <Image
+                  srcSet={`${portfolioSite} 1280w, ${portfolioSiteLarge} 2560w`}
+                  width={1280}
+                  height={862}
+                  placeholder={portfolioSitePlaceholder}
+                  alt="nathank.build portfolio site showing the hero section with Leader + Chief of Staff headline"
+                  sizes={`(max-width: ${media.mobile}px) 100vw, 50vw`}
+                />
+              </div>
+            </div>
+          </ProjectSectionContent>
+        </ProjectSection>
+        <ProjectSection light className={styles.compactSection}>
+          <ProjectSectionContent>
+            <div className={styles.columns} data-alternate="true">
               <div className={styles.textColumn}>
                 <ProjectTextRow noMargin>
                   <ProjectSectionHeading>StarkWeather</ProjectSectionHeading>
@@ -68,9 +99,9 @@ export const AiDevelopment = () => {
             </div>
           </ProjectSectionContent>
         </ProjectSection>
-        <ProjectSection light className={styles.compactSection}>
+        <ProjectSection className={styles.compactSection}>
           <ProjectSectionContent>
-            <div className={styles.columns} data-alternate="true">
+            <div className={styles.columns}>
               <div className={styles.textColumn}>
                 <ProjectTextRow noMargin>
                   <ProjectSectionHeading>Grabbl</ProjectSectionHeading>
@@ -96,9 +127,9 @@ export const AiDevelopment = () => {
             </div>
           </ProjectSectionContent>
         </ProjectSection>
-        <ProjectSection className={styles.compactSection}>
+        <ProjectSection light className={styles.compactSection}>
           <ProjectSectionContent>
-            <div className={styles.columns}>
+            <div className={styles.columns} data-alternate="true">
               <div className={styles.textColumn}>
                 <ProjectTextRow noMargin>
                   <ProjectSectionHeading>WeatherMat</ProjectSectionHeading>
@@ -120,24 +151,6 @@ export const AiDevelopment = () => {
                   alt="WeatherMat benefits navigator showing food assistance, healthcare, ID, and housing help resources"
                   sizes={`(max-width: ${media.mobile}px) 100vw, 50vw`}
                 />
-              </div>
-            </div>
-          </ProjectSectionContent>
-        </ProjectSection>
-        <ProjectSection light className={styles.compactSection}>
-          <ProjectSectionContent>
-            <div className={styles.columns} data-alternate="true">
-              <div className={styles.textColumn}>
-                <ProjectTextRow noMargin>
-                  <ProjectSectionHeading>This Portfolio</ProjectSectionHeading>
-                  <ProjectSectionText>
-                    The site you&apos;re on right now. Built with Remix, Three.js, custom
-                    GLSL shaders, and deployed to Cloudflare — all using Claude Code as
-                    my engineering co-pilot. Product thinking applied to personal branding:
-                    responsive design, animated transitions, dark/light themes, and
-                    performance-first architecture.
-                  </ProjectSectionText>
-                </ProjectTextRow>
               </div>
             </div>
           </ProjectSectionContent>
