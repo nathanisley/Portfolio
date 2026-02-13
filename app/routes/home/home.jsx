@@ -1,6 +1,6 @@
-import localTextureLarge from '~/assets/local-large.jpg';
-import localTexturePlaceholder from '~/assets/local-placeholder.jpg';
-import localTexture from '~/assets/local.jpg';
+import productLeadershipLarge from '~/assets/product-leadership-large.jpg';
+import productLeadershipPlaceholder from '~/assets/product-leadership-placeholder.jpg';
+import productLeadership from '~/assets/product-leadership.jpg';
 import agileScalingLarge from '~/assets/agile-scaling-large.jpg';
 import agileScalingPlaceholder from '~/assets/agile-scaling-placeholder.jpg';
 import agileScaling from '~/assets/agile-scaling.jpg';
@@ -12,6 +12,9 @@ import sprTexturePlaceholder from '~/assets/spr-lesson-builder-dark-placeholder.
 import sprTexture from '~/assets/spr-lesson-builder-dark.jpg';
 import petFriendlyVideo from '~/assets/petfriendly.mp4';
 import petFriendlyPlaceholder from '~/assets/petfriendly-placeholder.jpg';
+import communityBikeLarge from '~/assets/community-bike-large.jpg';
+import communityBikePlaceholder from '~/assets/community-bike-placeholder.jpg';
+import communityBike from '~/assets/community-bike.jpg';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
@@ -36,10 +39,11 @@ export const Home = () => {
   const projectTwo = useRef();
   const projectThree = useRef();
   const projectFour = useRef();
+  const projectFive = useRef();
   const details = useRef();
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, projectThree, projectFour, details];
+    const sections = [intro, projectOne, projectTwo, projectThree, projectFour, projectFive, details];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -88,7 +92,7 @@ export const Home = () => {
         index={1}
         title="AI-Powered Product Development"
         description="Proof that product sense + AI ships real software. This portfolio, a beloved weather app, a gravel road discovery tool, and a resource app for the unhoused — all designed and launched with AI as my engineering partner."
-        buttonText="View projects"
+        buttonText="How I built it"
         buttonLink="/projects/ai-development"
         decorativeLabel="Shipped"
         model={{
@@ -111,7 +115,7 @@ export const Home = () => {
         index={2}
         title="PetFriendly — Chief of Staff"
         description="Recruited by the CEO to co-run the company as his left hand man. Oversaw operations, managed the development team, ran the leadership team, and tripled the product offering at this delightful pet wellness startup."
-        buttonText="View case study"
+        buttonText="How I ran it"
         buttonLink="/projects/petfriendly"
         decorativeLabel="Ran"
         model={{
@@ -134,16 +138,19 @@ export const Home = () => {
         index={3}
         title="Flywheel — Product Leadership"
         description="Led the delivery team for Flywheel's second-ever product offering. Drove the customer-led 'Local Pro' roadmap with user research, go-to-market strategy, and cross-functional collaboration across engineering, design, and marketing."
-        buttonText="View case study"
+        buttonText="How I led it"
         buttonLink="/projects/gamestack"
         decorativeLabel="Led"
         model={{
-          alt: 'Local by Flywheel WordPress development application',
-          imageScale: 1.02,
+          alt: 'Agile scaling team collaboration and sprint planning',
+          imageScale: 1.4,
+          imageCrop: '1280 / 770',
+          imageCropY: '21%',
+          imageOffsetX: '3.5%',
           textures: [
             {
-              srcSet: `${localTexture} 1280w, ${localTextureLarge} 2560w`,
-              placeholder: localTexturePlaceholder,
+              srcSet: `${agileScaling} 1280w, ${agileScalingLarge} 3916w`,
+              placeholder: agileScalingPlaceholder,
             },
           ],
         }}
@@ -156,15 +163,35 @@ export const Home = () => {
         index={4}
         title="Scaling Agile — 20 to 80+ Builders"
         description="As Agile Coach at Flywheel/WP Engine, I scaled the Scrum organization fourfold. Certified by Jeff Sutherland and Mike Cohn, I trained thousands of clients across four countries on Agile, Scrum, Kanban, and release planning."
-        buttonText="View case study"
+        buttonText="How I scaled it"
         buttonLink="/projects/slice"
         decorativeLabel="Scaled"
         model={{
-          alt: 'Agile scaling team collaboration and sprint planning',
+          alt: 'Flywheel product leadership team collaboration',
           textures: [
             {
-              srcSet: `${agileScaling} 1280w, ${agileScalingLarge} 3916w`,
-              placeholder: agileScalingPlaceholder,
+              srcSet: `${productLeadership} 1280w, ${productLeadershipLarge} 2048w`,
+              placeholder: productLeadershipPlaceholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-5"
+        sectionRef={projectFive}
+        visible={visibleSections.includes(projectFive.current)}
+        index={5}
+        title="Giving Back"
+        description="None of it means much without giving back. Board leadership, mentoring a kid for nine years, food drives, shelter volunteering — showing up for people facing things most of us never have to think about."
+        buttonText="See the work"
+        buttonLink="/giving-back"
+        decorativeLabel="Gave"
+        model={{
+          alt: 'Community Bike Project volunteers working together',
+          textures: [
+            {
+              srcSet: `${communityBike} 640w, ${communityBikeLarge} 2100w`,
+              placeholder: communityBikePlaceholder,
             },
           ],
         }}

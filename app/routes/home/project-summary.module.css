@@ -109,7 +109,10 @@
     width: 100%;
     height: auto;
     display: block;
-    transform: scale(var(--imageScale, 1.1)) translateY(var(--imageOffsetY, 0%));
+    transform: scale(var(--imageScale, 1.1)) translate(var(--imageOffsetX, 0%), var(--imageOffsetY, 0%));
+    aspect-ratio: var(--imageCrop);
+    object-fit: cover;
+    object-position: 50% var(--imageCropY, 50%);
   }
 
   & video {

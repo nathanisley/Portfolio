@@ -75,8 +75,11 @@ export function ProjectSummary({
           style={{
             '--imageScale': model.imageScale || 1.1,
             '--imageOffsetY': model.imageOffsetY || '0%',
+            '--imageOffsetX': model.imageOffsetX || '0%',
             ...(model.videoCrop && { '--videoCrop': model.videoCrop }),
             ...(model.videoCropY && { '--videoCropY': model.videoCropY }),
+            ...(model.imageCrop && { '--imageCrop': model.imageCrop }),
+            ...(model.imageCropY && { '--imageCropY': model.imageCropY }),
           }}
         >
           <Image
