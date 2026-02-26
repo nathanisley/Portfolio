@@ -92,7 +92,7 @@ export const Home = () => {
         index={1}
         title="AI-Powered Product Development"
         description="Proof that product sense + AI ships real software. nathank.build, a beloved weather app, a gravel road discovery tool, and a resource app for the unhoused. All designed and launched with AI as my engineering partner."
-        buttonText="How I built it"
+        buttonText="View projects"
         buttonLink="/projects/ai-development"
         decorativeLabel="Shipped"
         model={{

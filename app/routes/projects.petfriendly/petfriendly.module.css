@@ -37,6 +37,20 @@
   min-width: 0;
 }
 
+.imageWrap {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--black);
+  box-shadow: 0 0 60px color-mix(in lab, var(--background) 40%, transparent);
+  will-change: transform;
+  backface-visibility: hidden;
+
+  @media (--mediaMobile) {
+    border-radius: 12px;
+  }
+}
+
 .placeholder {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -59,4 +73,10 @@
   height: 64px;
   opacity: 0.15;
   color: var(--text);
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  display: block;
 }

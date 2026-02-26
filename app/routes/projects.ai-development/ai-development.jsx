@@ -81,7 +81,7 @@ export const AiDevelopment = () => {
                   <ProjectSectionText>
                     A weather app built for people who actually care about the forecast.
                     StarkWeather surfaces precipitation predictions, accuracy feedback,
-                    and a Weather Sense timeline — designed to cut through the noise of
+                    and a Weather Sense timeline, all designed to cut through the noise of
                     bloated weather apps. Built with AI from first commit to App Store.
                   </ProjectSectionText>
                 </ProjectTextRow>
@@ -136,7 +136,7 @@ export const AiDevelopment = () => {
                   <ProjectSectionText>
                     A resource platform for people experiencing homelessness. SleepMat
                     connects users to food assistance, healthcare, housing help, and ID
-                    services — all accessible offline and without an account. Built with
+                    services, all accessible offline and without an account. Built with
                     a map, parking resources, and a benefits navigator designed to work
                     when you have no fixed address.
                   </ProjectSectionText>
