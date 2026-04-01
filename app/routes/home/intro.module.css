@@ -20,6 +20,7 @@
   position: relative;
   z-index: var(--zIndex2);
   top: calc(var(--spaceL) * -1);
+  overflow: visible;
 
   @media (--mediaMobile) {
     max-width: none;
@@ -130,6 +131,7 @@
   flex-direction: row;
   align-items: center;
   position: relative;
+  overflow: visible;
 
   &[data-hidden='true'] {
     opacity: 0;
@@ -254,11 +256,11 @@
 .line {
   content: '';
   height: 2px;
-  background: color-mix(in lab, var(--text) 30%, transparent);
-  flex: 1;
-  min-width: 40px;
-  display: flex;
-  margin-left: 20px;
+  background: color-mix(in lab, var(--text) 70%, transparent);
+  width: 100%;
+  display: block;
+  margin-top: var(--spaceM);
+  margin-bottom: var(--spaceM);
   animation-duration: 0.8s;
   animation-delay: 1s;
   animation-fill-mode: forwards;

@@ -22,6 +22,8 @@ export function ProjectSummary({
   buttonLink,
   alternate,
   decorativeLabel,
+  previewMaxWidth,
+  overlay,
   ...rest
 }) {
   const [focused, setFocused] = useState(false);
@@ -90,6 +92,7 @@ export function ProjectSummary({
             alt={model.alt}
             sizes="(max-width: 696px) 90vw, (max-width: 1040px) 80vw, 50vw"
           />
+          {overlay}
         </div>
       </div>
     );
@@ -109,7 +112,10 @@ export function ProjectSummary({
       tabIndex={-1}
       {...rest}
     >
-      <div className={styles.content}>
+      <div
+          className={styles.content}
+          style={previewMaxWidth ? { '--previewMax': previewMaxWidth } : undefined}
+        >
         <Transition in={sectionVisible || focused}>
           {({ visible }) => (
             <>

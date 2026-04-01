@@ -80,3 +80,16 @@
   height: auto;
   display: block;
 }
+
+.croppedVideo {
+  width: 100%;
+  display: block;
+
+  & video {
+    width: 100%;
+    display: block;
+    aspect-ratio: var(--videoCrop);
+    object-fit: cover;
+    object-position: 50% var(--videoCropY, 50%);
+  }
+}

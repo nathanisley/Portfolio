@@ -151,8 +151,8 @@ export function Intro({ id, sectionRef, scrollIndicatorHidden, ...rest }) {
                   >
                     {config.role}
                   </span>
-                  <span className={styles.line} data-status={status} />
                 </span>
+                <span className={styles.line} data-status={status} />
                 <div className={`${styles.row} ${styles.disciplines}`}>
                   {disciplines.map(item => (
                     <Transition

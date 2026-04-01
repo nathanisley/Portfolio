@@ -1,5 +1,9 @@
 import petFriendlyVideo from '~/assets/petfriendly.mp4';
 import petFriendlyPlaceholder from '~/assets/petfriendly-placeholder.jpg';
+import petFriendlyProducts from '~/assets/petfriendly-products.jpg';
+import petFriendlyProductsPlaceholder from '~/assets/petfriendly-products-placeholder.jpg';
+import petFriends from '~/assets/petfriends.jpg';
+import petFriendsPlaceholder from '~/assets/petfriends-placeholder.jpg';
 import { Footer } from '~/components/footer';
 import {
   ProjectContainer,
@@ -10,6 +14,8 @@ import {
   ProjectSectionText,
   ProjectTextRow,
 } from '~/layouts/project';
+import { Image } from '~/components/image';
+import { media } from '~/utils/style';
 import { Fragment } from 'react';
 import { baseMeta } from '~/utils/meta';
 import styles from './petfriendly.module.css';
@@ -65,17 +71,14 @@ export const PetFriendly = () => {
                   </ProjectSectionText>
                 </ProjectTextRow>
               </div>
-              <div className={styles.imageWrap}>
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  poster={petFriendlyPlaceholder}
-                  className={styles.video}
-                >
-                  <source src={petFriendlyVideo} type="video/mp4" />
-                </video>
+              <div className={styles.imageWrap} style={{ '--videoCrop': '576 / 624', '--videoCropY': '50%' }}>
+                <Image
+                  className={styles.croppedVideo}
+                  src={petFriendlyVideo}
+                  placeholder={petFriendlyPlaceholder}
+                  alt="PetFriendly app promotional video"
+                  sizes={`(max-width: ${media.mobile}px) 100vw, 50vw`}
+                />
               </div>
             </div>
           </ProjectSectionContent>
@@ -94,8 +97,16 @@ export const PetFriendly = () => {
                   </ProjectSectionText>
                 </ProjectTextRow>
               </div>
-              {/* Replace with product screenshots or roadmap image */}
-              <PlaceholderImage />
+              <div className={styles.imageWrap}>
+                <Image
+                  srcSet={`${petFriendlyProducts} 800w`}
+                  width={800}
+                  height={700}
+                  placeholder={petFriendlyProductsPlaceholder}
+                  alt="PetFriendly subscription boxes with dogs and customers"
+                  sizes={`(max-width: ${media.mobile}px) 100vw, 50vw`}
+                />
+              </div>
             </div>
           </ProjectSectionContent>
         </ProjectSection>
@@ -113,8 +124,17 @@ export const PetFriendly = () => {
                   </ProjectSectionText>
                 </ProjectTextRow>
               </div>
-              {/* Replace with team photo or culture image */}
-              <PlaceholderImage />
+              <div className={styles.imageWrap}>
+                <Image
+                  style={{ transform: 'scale(1.2)' }}
+                  srcSet={`${petFriends} 1216w`}
+                  width={1216}
+                  height={690}
+                  placeholder={petFriendsPlaceholder}
+                  alt="PetFriendly team members"
+                  sizes={`(max-width: ${media.mobile}px) 100vw, 50vw`}
+                />
+              </div>
             </div>
           </ProjectSectionContent>
         </ProjectSection>

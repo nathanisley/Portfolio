@@ -15,6 +15,11 @@ import petFriendlyPlaceholder from '~/assets/petfriendly-placeholder.jpg';
 import givingBackLarge from '~/assets/giving-back-large.jpg';
 import givingBackPlaceholder from '~/assets/giving-back-placeholder.jpg';
 import givingBack from '~/assets/giving-back.jpg';
+import crawleradoVideo from '~/assets/crawlerado.mp4';
+import crawleradoPlaceholder from '~/assets/crawlerado-placeholder.jpg';
+import audioImg from '~/assets/audio.jpg';
+import audioPlaceholder from '~/assets/audio-placeholder.jpg';
+import { AudioWaveform } from './audio-waveform';
 import { Footer } from '~/components/footer';
 import { baseMeta } from '~/utils/meta';
 import { Intro } from './intro';
@@ -40,10 +45,12 @@ export const Home = () => {
   const projectThree = useRef();
   const projectFour = useRef();
   const projectFive = useRef();
+  const projectSix = useRef();
+  const projectSeven = useRef();
   const details = useRef();
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, projectThree, projectFour, projectFive, details];
+    const sections = [intro, projectOne, projectTwo, projectThree, projectFour, projectFive, projectSix, projectSeven, details];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -113,6 +120,7 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
+        previewMaxWidth="450px"
         title="PetFriendly — Chief of Staff"
         description="Recruited by the CEO to co-run the company as his left hand man. Oversaw operations, managed the development team, ran the leadership team, and tripled the product offering at this delightful pet wellness startup."
         buttonText="How I ran it"
@@ -192,6 +200,48 @@ export const Home = () => {
             {
               srcSet: `${givingBack} 1280w, ${givingBackLarge} 5760w`,
               placeholder: givingBackPlaceholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-6"
+        alternate
+        sectionRef={projectSix}
+        visible={visibleSections.includes(projectSix.current)}
+        index={6}
+        title="Crawlerado Bikepacking"
+        description="Northern Colorado bikepacking community I founded. A web bikepacking resource landing page with interactive gravel road discovery, gear checklists, and ride resources. Get equipped, find your route, and ride with us."
+        buttonText="Visit crawlerado.com"
+        buttonLink="https://crawlerado.com"
+        decorativeLabel="Rode"
+        model={{
+          alt: 'Crawlerado bikepacking community website',
+          textures: [
+            {
+              src: crawleradoVideo,
+              placeholder: crawleradoPlaceholder,
+            },
+          ],
+        }}
+      />
+      <ProjectSummary
+        id="project-7"
+        sectionRef={projectSeven}
+        visible={visibleSections.includes(projectSeven.current)}
+        index={7}
+        overlay={<AudioWaveform />}
+        title="Audio Engineer"
+        description="Before product, I made records. Engineer, mixer, mastering, and studio musician with credits on over 50 releases. Years behind the console and on stage, shaping sound for bands across the Midwest."
+        buttonText="View discography"
+        buttonLink="https://www.discogs.com/artist/1196680-Nathan-Knisley"
+        decorativeLabel="Mixed"
+        model={{
+          alt: 'Nathan in the recording studio behind the mixing console',
+          textures: [
+            {
+              srcSet: `${audioImg} 1279w`,
+              placeholder: audioPlaceholder,
             },
           ],
         }}
