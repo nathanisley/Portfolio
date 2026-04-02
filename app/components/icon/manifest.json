@@ -62,5 +62,9 @@
   "bandcamp": {
     "width": 24,
     "height": 24
+  },
+  "crawlerado": {
+    "width": 24,
+    "height": 24
   }
 }

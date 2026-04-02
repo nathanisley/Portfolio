@@ -40,4 +40,9 @@ export const socialLinks = [
     url: config.bandcamp,
     icon: 'bandcamp',
   },
+  {
+    label: 'Crawlerado',
+    url: config.crawlerado,
+    icon: 'crawlerado',
+  },
 ];
